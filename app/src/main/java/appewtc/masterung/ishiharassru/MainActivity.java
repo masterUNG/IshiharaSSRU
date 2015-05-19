@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -22,6 +23,7 @@ public class MainActivity extends ActionBarActivity {
     private RadioButton choice1RadioButton, choice2RadioButton,
             choice3RadioButton, choice4RadioButton;
     private Button answerButton;
+    private int radioAnInt;
 
 
     @Override
@@ -50,6 +52,26 @@ public class MainActivity extends ActionBarActivity {
                 MediaPlayer radioPlayer = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_shut);
                 radioPlayer.start();
 
+                //Setup radioAnInt
+                switch (i) {
+                    case R.id.radioButton:
+                        radioAnInt = 1;
+                        break;
+                    case R.id.radioButton2:
+                        radioAnInt = 2;
+                        break;
+                    case R.id.radioButton3:
+                        radioAnInt = 3;
+                        break;
+                    case R.id.radioButton4:
+                        radioAnInt = 4;
+                        break;
+                    default:
+                        radioAnInt = 0;
+                        break;
+                }   // switch
+
+
             }   // event
         });
 
@@ -65,10 +87,26 @@ public class MainActivity extends ActionBarActivity {
                 MediaPlayer buttonPlayer = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_long);
                 buttonPlayer.start();
 
+                //Check Zero
+                checkZero();
+
+
             }   //event
         });
 
     }   // buttonController
+
+    private void checkZero() {
+
+        if (radioAnInt == 0) {
+
+            Toast.makeText(MainActivity.this, "กรุณาตอบคำถาม เว้ยเห้ย", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+        }   //if
+
+    }   // checkZero
 
     private void bindWidget() {
 
