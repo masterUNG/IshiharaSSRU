@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity {
     private RadioButton choice1RadioButton, choice2RadioButton,
             choice3RadioButton, choice4RadioButton;
     private Button answerButton;
-    private int radioAnInt, indexAnInt;
+    private int radioAnInt, indexAnInt, scoreAnInt;
     private SSRUmodel objSsrUmodel;
 
 
@@ -145,6 +145,11 @@ public class MainActivity extends ActionBarActivity {
 
         } else {
 
+
+            //Check Score
+            checkScore();
+
+
             //Check Times
             checkTimes();
 
@@ -152,6 +157,18 @@ public class MainActivity extends ActionBarActivity {
         }   //if
 
     }   // checkZero
+
+    private void checkScore() {
+
+        int trueAnswer[] = new int[]{1, 2, 3, 1, 2, 3, 1, 2, 4, 4};
+        int intUser[] = new int[10];
+        intUser[indexAnInt] = radioAnInt;
+
+        if (intUser[indexAnInt] == trueAnswer[indexAnInt]) {
+            scoreAnInt += 1;
+        }
+
+    }   // checkScore
 
     private void checkTimes() {
 
@@ -179,6 +196,7 @@ public class MainActivity extends ActionBarActivity {
     private void intentToShowScore() {
 
         Intent objIntent = new Intent(MainActivity.this, ShowScoreActivity.class);
+        objIntent.putExtra("Score", scoreAnInt);
         startActivity(objIntent);
         finish();
     }

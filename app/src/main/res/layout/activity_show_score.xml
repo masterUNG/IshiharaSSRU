@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10/10"
-        android:id="@+id/textView4"
+        android:id="@+id/txtShowScore"
         android:layout_centerInParent="true"
         android:textSize="110dp"
         android:textStyle="bold"

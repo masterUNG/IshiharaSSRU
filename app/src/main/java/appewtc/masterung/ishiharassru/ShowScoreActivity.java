@@ -12,7 +12,7 @@ public class ShowScoreActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_score);
-    }
+    }   // onCreate
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -35,4 +35,4 @@ public class ShowScoreActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+}   // Main Class
