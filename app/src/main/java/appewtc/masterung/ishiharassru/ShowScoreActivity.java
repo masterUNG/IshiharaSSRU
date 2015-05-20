@@ -1,18 +1,46 @@
 package appewtc.masterung.ishiharassru;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class ShowScoreActivity extends ActionBarActivity {
+
+    //Explicit
+    private TextView showScoreTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_score);
+
+        //Show Score
+        showScore();
+
     }   // onCreate
+
+    public void clickPlay(View view) {
+        Intent objIntent = new Intent(ShowScoreActivity.this, MainActivity.class);
+        startActivity(objIntent);
+        finish();
+    }
+
+    public void clickExit(View view) {
+        finish();
+    }
+
+    private void showScore() {
+
+        int intShowScore = getIntent().getExtras().getInt("Score");
+        showScoreTextView = (TextView) findViewById(R.id.txtShowScore);
+        showScoreTextView.setText(Integer.toString(intShowScore) + "/10");
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

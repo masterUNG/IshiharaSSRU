@@ -168,6 +168,8 @@ public class MainActivity extends ActionBarActivity {
             scoreAnInt += 1;
         }
 
+        choiceRadioGroup.clearCheck();
+
     }   // checkScore
 
     private void checkTimes() {
