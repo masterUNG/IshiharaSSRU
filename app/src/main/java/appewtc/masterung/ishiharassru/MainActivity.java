@@ -71,6 +71,16 @@ public class MainActivity extends ActionBarActivity {
                 R.drawable.ishihara_09, R.drawable.ishihara_10};
         ishiharaImageView.setImageResource(drawableAnInt[buttonAnInt]);
 
+        //Change Choice
+        int choiceAnInt[] = new int[]{R.array.times1, R.array.times2, R.array.times3,
+                R.array.times4, R.array.times5, R.array.times6, R.array.times7, R.array.times8,
+                R.array.times9, R.array.times10};
+        String strChoice[] = new String[4];
+        strChoice = getResources().getStringArray(choiceAnInt[buttonAnInt]);
+        choice1RadioButton.setText(strChoice[0]);
+        choice2RadioButton.setText(strChoice[1]);
+        choice3RadioButton.setText(strChoice[2]);
+        choice4RadioButton.setText(strChoice[3]);
     }   // changeView
 
     private void radioController() {
