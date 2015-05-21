@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -45,7 +46,29 @@ public class MainActivity extends ActionBarActivity {
         //About SSRUmodel
         aboutSSRUmodel();
 
+        //Show OnTouch
+        showOnTouch();
+
     }   // onCreate
+
+    private void showOnTouch() {
+        ishiharaImageView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    //ishiharaImageView.setVisibility(View.INVISIBLE);
+                    ishiharaImageView.setImageResource(R.drawable.logo_sunandha);
+                }
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    //ishiharaImageView.setVisibility(View.VISIBLE);
+                    ishiharaImageView.setImageResource(R.drawable.ishihara_01);
+                }
+
+                return true;
+            }
+        });
+    }
 
     private void aboutSSRUmodel() {
 
